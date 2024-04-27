@@ -17,7 +17,9 @@ function element(tag, classname, id, text) {
 //API hit while clicking on search button
 
 searchArticle.addEventListener("click",()=>{
-    console.log(categorySelect.value,languageSelect.value,countrySelect.value,keyword.value);
+    //console.log(categorySelect.value,languageSelect.value,countrySelect.value,keyword.value);
+    const articleContainer = document.getElementById("articleContainer");
+    articleContainer.innerHTML = " ";
     //Values like category language country and keyword are send to API through passing parameters
     const APIKey = "1f9c5f39d9134cc0ddaee98e216f621e";
     const getArticle = fetch(`https://gnews.io/api/v4/search?q=${keyword.value}&lang=${languageSelect.value}&country=${countrySelect.value}&category=${categorySelect.value}&apikey=${APIKey}`);
@@ -25,9 +27,8 @@ searchArticle.addEventListener("click",()=>{
     getArticle
     .then((result)=>result.json())  //Convert readable API data into json 
     .then((data)=>{
-        console.log(data);
-        const articleContainer = document.getElementById("articleContainer");    
-        console.log(data.articles.length);
+       // console.log(data);
+        //console.log(data.articles.length);
         const totalArticles = document.getElementById("totalArticles"); 
         totalArticles.innerHTML = `Showing ${data.articles.length} out of ${data.totalArticles} articles`;//Display number of articles and articles shown in the page.by default 10 articles only are shown
         for(let i=0;i<data.articles.length;i++){
@@ -38,7 +39,8 @@ searchArticle.addEventListener("click",()=>{
             const cardImage = element("img","card-img-top"," "," ");
             const cardBody = element("div","card-body"," "," ");
             const cardFooter = element("div","card-footer"," "," ");
-            console.log(data.articles[i].image);
+            card.classList.add("h-100");
+            //console.log(data.articles[i].image);
             linkUrl.setAttribute("href",`${data.articles[i].url}`);  // link to source article page
             linkUrl.setAttribute("target","_blank");
             linkUrl.setAttribute("title",`${data.articles[i].title}`);
