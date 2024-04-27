@@ -1,0 +1,59 @@
+*{
+    margin:0;
+    padding:0;
+    
+}
+body{
+    background-color: rgb(234, 243, 243);
+    font-style: italic;
+}
+header img{
+    width:5rem;
+    height:3rem;
+}
+header strong{
+    font-weight: bold;
+    font-size:xx-large;
+    
+}
+.selection-box{
+     background-color: grey;
+     border:5px solid white;
+     border-radius: 1rem;
+}
+.selection-box label{
+    color:white;
+    font-weight: bold;
+    font-size: medium;
+    padding-right:5px;
+}
+.selection-box select,.selection-box input{
+    font-size: medium;
+    border:1px solid grey;
+    border-radius:0.5rem;
+}
+#searchArticle{
+    width:9rem;
+    margin:0 auto;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#articleDisplay{
+    background-color: rgb(180, 177, 177);
+     border:5px solid white;
+     border-radius: 1rem;
+     visibility: hidden;
+}
+#totalArticles{
+    color:rgb(56, 36, 24);
+    font-weight:bold;
+}
+.card{
+    border:2px solid gray;
+    border-radius: 1rem;
+}
+
+.card-body .card-title{
+    color:red;
+}
